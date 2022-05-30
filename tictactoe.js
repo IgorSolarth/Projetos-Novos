@@ -8,26 +8,35 @@ const Tictactoe = () => {
 
     ];
     const self = {
+        bot: true,
+        turn: "",
         text: texts [0]
     
     };
+
+    self.init = (elem) => {
+        elem.addEventListener("click", () => {
+            console.log("clicou");
+        });
+    }
+
     const template = `
         <div>
            <h1>Jogo da velha</h1>
            <p>
-              Jogar contra o computador <input type="checkbox" checked>
+              Jogar contra o computador <input type="checkbox" checked @bind="self.bot">
             </p>
             <div> 
                 <div class="gui">
-                  <span class="gui_turn"></span>
-                  <span>Aperte o Play para Jogar</span>
+                  <span class="gui_turn">{{self.turn}}</span>
+                  <span>{{self.text}}</span>
                 </div>
-                <div class="board">
+                <div class="board" @ready="self.init(this)">
                   
                     <section class="board_column">
-                        <span class="board_cell" data-id="1"></span>
+                        <span class="board_cell" data-id="1">x</span>
                         <span class="board_cell" data-id="2"></span>
-                        <span class="bord_cell" data-id="3"></span>
+                        <span class="board_cell" data-id="3"></span>
                     </section>
                     <section class="board_column">
                         <span class="board_cell" data-id="4"></span>

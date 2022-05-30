@@ -13,3 +13,36 @@ body {
 .gui_turn {
     text-transform: uppercase;
 }
+
+.board_column {
+    display: flex;
+    margin-bottom: 10px;
+
+}
+
+.board_cell {
+    position: relative;
+    background-color: aqua;
+    color: rgb(255, 255, 255);
+    height: 90px;
+    width: 90px;
+    margin: 2px;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.btn {
+    background-color: rgb(9, 255, 0);
+    color: rgb(248, 248, 248);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
